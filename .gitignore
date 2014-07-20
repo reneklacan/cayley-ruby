@@ -1,0 +1,11 @@
+/.bundle
+/.ruby-version
+
+/log
+/Gemfile.lock
+/coverage
+/examples/test.rb
+
+*.swp
+*.swo
+*.gem
