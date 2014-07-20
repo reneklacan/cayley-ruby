@@ -41,7 +41,7 @@ Then using **30kmovies.nt** db from cayley's repository you can do this
 ```ruby
 graph.vertex.get_limit(5)
 
-graph.vertex('Humphrey Bogart').lll
+graph.vertex('Humphrey Bogart').all
 
 graph.v('Humphrey Bogart').all
 
