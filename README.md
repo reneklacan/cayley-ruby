@@ -49,7 +49,7 @@ graph.v('Humphrey Bogart').in('name').all
 
 graph.v('Casablanca').in('name').all
 
-graph.v().has('name', 'Casablanca').all
+graph.v.has('name', 'Casablanca').all
 ```
 
 You can also use morphism

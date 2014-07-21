@@ -16,7 +16,7 @@ p graph.v('Humphrey Bogart').in('name').all
 
 p graph.v('Casablanca').in('name').all
 
-p graph.v().has('name', 'Casablanca').all
+p graph.v.has('name', 'Casablanca').all
 
 p graph.v
        .has('name', 'Casablanca')
