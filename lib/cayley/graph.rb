@@ -3,7 +3,6 @@ module Cayley
   class Graph
     API_PATH = '/api/v1/query/gremlin'
 
-
     def initialize params
       @host = params[:host] || 'localhost'
       @port = params[:port] || 64210

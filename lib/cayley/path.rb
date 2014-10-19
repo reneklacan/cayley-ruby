@@ -7,6 +7,7 @@ module Cayley
       :out, :in, :both, :is, :has, # basic
       :tag, :back, :save, # tags
       :intersect, :union, # joining
+      :and, :or, # joining aliases
     ]
 
     def self.vertex graph, *args
@@ -51,6 +52,10 @@ module Cayley
     def get_limit limit
       add(:get_limit, limit)
       @graph.perform(self)
+    end
+
+    def limit l
+      get_limit(l)
     end
 
     def construct
