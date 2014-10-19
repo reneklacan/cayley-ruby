@@ -20,14 +20,15 @@ module Cayley
       Path.new(graph)
     end
 
-    def initialize graph=nil
+    def initialize graph=nil, calls=[]
       @graph = graph
-      @calls = []
+      @calls = calls
     end
 
     def method_missing name, *args
       return super unless METHODS.include?(name)
-      add(name, *args)
+      path = Path.new(@graph, @calls.dup)
+      path.add(name, *args)
     end
 
     def add name, *args
@@ -36,22 +37,19 @@ module Cayley
     end
 
     def follow path
-      path.calls.each { |c| @calls << c }
-      self
+      Path.new(@graph, @calls.dup + path.calls)
     end
 
     def + path
-      clone.follow(path)
+      follow(path)
     end
 
     def all
-      add(:all)
-      @graph.perform(self)
+      copy.add(:all).perform
     end
 
     def get_limit limit
-      add(:get_limit, limit)
-      @graph.perform(self)
+      copy.add(:get_limit, limit).perform
     end
 
     def limit l
@@ -65,6 +63,14 @@ module Cayley
         "#{m}(#{as})"
       end
       'graph.' + calls.join('.')
+    end
+
+    def perform
+      @graph.perform(self)
+    end
+
+    def copy
+      Path.new(@graph, @calls.dup)
     end
   end
 

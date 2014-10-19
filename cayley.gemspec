@@ -22,6 +22,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'hashie', '~> 3.2.0'
   s.add_dependency 'activesupport', '~> 4.1.4'
 
-  s.add_development_dependency 'rspec', '~> 3.0'
-  s.add_development_dependency 'rspec-mocks', '~> 3.0'
+  s.add_development_dependency 'rspec', '~> 3.1'
+  s.add_development_dependency 'rspec-mocks', '~> 3.1'
 end
