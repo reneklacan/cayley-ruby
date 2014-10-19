@@ -18,7 +18,7 @@ Start your Cayley
 
 ```bash
 # example using 30kmoviedata from cayley's repository
-./cayley http --dbpath=30kmoviedata.nt
+./cayley http --dbpath=30kmoviedata.nq.gz
 ```
 
 You can use methods from
